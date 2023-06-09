@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        maven { url = "https://files.minecraftforge.net/maven" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -59,14 +59,14 @@ dependencies {
 //   deobfCompile "compact-machines:compactmachines3-${mc_version}:${cm_version}:${cm_build}" 
 }
 repositories {
-    maven { url "https://dvs1.progwml6.com/files/maven"    }
-    maven { url "https://modmaven.k-4u.nl"  }
-    maven { url "https://maven.theillusivec4.top/"    }
+    maven { url "https://dvs1.progwml6.com/files/maven" }
+    maven { url "https://modmaven.k-4u.nl" }
+    maven { url "https://maven.theillusivec4.top/" }
     maven { url "https://maven.blamejared.com" }
     maven { url "https://maven.blamejared.com/vazkii" }
-    maven { url "http://minecraft.curseforge.com/api/maven/"    }
-    maven { url 'https://www.cursemaven.com'  }
-   maven {   url "https://maven.thiakil.com/"    } 
+    maven { url "https://minecraft.curseforge.com/api/maven/" }
+    maven { url 'https://www.cursemaven.com' }
+    maven { url "https://maven.thiakil.com/" }
 // ?? http://maven.thiakil.com/com/azanor/baubles/Baubles/
     // ?? https://files.minecraftforge.net/maven/
     //   maven {   url "https://tehnut.info/maven/"    } // 404s
@@ -86,14 +86,3 @@ processResources {
 }
 
 build.dependsOn signJar
-
-task copyJar(type: Copy) {
-    from jar
-    into "${dist_folder}"
-}
-
-build.finalizedBy copyJar
-
-task cleanJar {
-    delete 'build/libs'
-}
